@@ -1,5 +1,5 @@
 <template>
-  <div class="user-banner">
+  <div class="user-banner" v-if="false">
     <template v-if="isLoggedIn">
       <img :src="userInfo.icon" class="user-icon" />
       <span>{{ userInfo.name }}</span>
@@ -66,6 +66,7 @@ export default Vue.extend({
 }
 
 .user-icon {
+  border-radius: 100%;
   width: 32px;
   height: 32px;
   background: #ddd;

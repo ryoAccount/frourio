@@ -7,7 +7,7 @@ const iconsDir = 'public/icons'
 const createIconURL = (name: string) =>
   `${API_ORIGIN}${BASE_PATH}/icons/${name}`
 const userInfo = {
-  name: 'sample user',
+  name: 'User',
   icon: createIconURL(
     fs
       .readdirSync(path.resolve(iconsDir))

@@ -3,24 +3,26 @@
     <user-banner />
     <div>
       <logo />
-      <h1 class="title">frourio-todo-app</h1>
+      <h1 class="title">todo list</h1>
       <div v-if="!$fetchState.pending">
         <form @submit.prevent="createTask">
-          <input v-model="newLabel" type="text" />
-          <input type="submit" value="ADD" />
+          <input v-model="newLabel" class="textbox" type="text" />
+          <input type="submit" class="button" value="ADD" />
         </form>
         <ul class="tasks">
           <li v-for="task in tasks" :key="task.id">
             <label>
               <input
                 type="checkbox"
+                class="done"
                 :checked="task.done"
                 @change="toggleDone(task)"
               />
-              <span>{{ task.label }}</span>
+              <span class="task">{{ task.label }}</span>
             </label>
             <input
               type="button"
+              class="button"
               value="DELETE"
               style="float: right"
               @click="deleteTask(task)"
@@ -86,13 +88,31 @@ export default Vue.extend({
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   display: block;
   font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
+  font-size: 50px;
+  color: darkslategrey;
   letter-spacing: 1px;
 }
 
+.textbox {
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  outline: none;
+}
+
+.textbox:focus {
+  border: 2px solid grey;
+}
+
+.button {
+  border: 1.5px solid grey;
+  border-radius: 5px;
+  background-color: white;
+  color: rgb(37, 36, 36);
+  outline: none;
+}
+
 .tasks {
-  width: 300px;
+  width: 400px;
   padding: 0;
   margin: 20px auto 0;
   list-style-type: none;
@@ -101,6 +121,14 @@ export default Vue.extend({
 
 .tasks > li {
   margin-top: 10px;
-  border-bottom: 1px solid #eee;
+}
+
+.task {
+  border-bottom: 2px solid lightgray;
+}
+
+.done {
+  position: relative;
+  top: 3px;
 }
 </style>
