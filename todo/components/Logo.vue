@@ -1,6 +1,7 @@
 <template>
   <div>
     <svg
+      class="NuxtLogo"
       xmlns="http://www.w3.org/2000/svg"
       width="80"
       height="60"

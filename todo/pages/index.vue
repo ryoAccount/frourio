@@ -10,8 +10,9 @@
           <input type="submit" class="button" value="ADD" />
         </form>
         <ul class="tasks">
-          <li v-for="task in tasks" :key="task.id">
+          <li v-for="(task, index) in tasks" :key="task.id">
             <label>
+              <span>{{ index + 1 }}: </span>
               <input
                 type="checkbox"
                 class="done"
@@ -111,6 +112,10 @@ export default Vue.extend({
   outline: none;
 }
 
+.button:hover {
+  pointer-events: visible;
+}
+
 .tasks {
   width: 400px;
   padding: 0;
@@ -120,7 +125,7 @@ export default Vue.extend({
 }
 
 .tasks > li {
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .task {
