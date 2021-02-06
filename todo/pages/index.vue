@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <user-banner />
     <div>
       <logo />
       <h1 class="title">todo list</h1>
@@ -10,9 +9,14 @@
           <input type="submit" class="button" value="ADD" />
         </form>
         <ul class="tasks">
+          <li v-show="tasks.length !== 0">
+            <span class="head">No</span>
+            <span class="head">done</span>
+            <span class="head">todo</span>
+          </li>
           <li v-for="(task, index) in tasks" :key="task.id">
             <label>
-              <span>{{ index + 1 }}: </span>
+              <span class="no">{{ index + 1 }}</span>
               <input
                 type="checkbox"
                 class="done"
@@ -132,8 +136,18 @@ export default Vue.extend({
   border-bottom: 2px solid lightgray;
 }
 
+.head {
+  font-weight: 600;
+  margin: 0 5px;
+}
+
+.no {
+  margin-left: 10px;
+}
 .done {
   position: relative;
-  top: 3px;
+  top: 1px;
+  margin-left: 30px;
+  margin-right: 25px;
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <svg
-      class="NuxtLogo"
+      class="logo"
       xmlns="http://www.w3.org/2000/svg"
       width="80"
       height="60"
@@ -51,7 +51,7 @@ export default Vue.extend()
 </script>
 
 <style>
-.NuxtLogo {
+.logo {
   animation: 1s appear;
   margin: auto;
 }

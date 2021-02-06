@@ -1,5 +1,5 @@
 {
-  "name": "frourio-app",
+  "name": "todo-list",
   "script": "index.js",
   "env_production": {
     "NODE_ENV": "production"
