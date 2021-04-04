@@ -2,13 +2,11 @@ import { mount } from '@vue/test-utils'
 import aspida from '@aspida/axios'
 import Home from '@/pages/index.vue'
 import Logo from '@/components/Logo.vue'
-import UserBanner from '@/components/UserBanner.vue'
 import api from '~/server/api/$api'
 
 const apiClient = api(aspida())
 const options = {
-  stubs: { UserBanner, Logo },
-  mocks: { $fetchState: { pending: false } }
+  stubs: { Logo }
 }
 const res = <T extends (...args: any[]) => any>(
   data: ReturnType<T> extends Promise<infer S> ? S : never

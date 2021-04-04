@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">todo list</h1>
-      <div v-if="!$fetchState.pending">
+      <div>
         <form @submit.prevent="createTask">
           <input v-model="newLabel" class="textbox" type="text" />
           <input type="submit" class="button" value="ADD" />
@@ -89,8 +89,7 @@ export default Vue.extend({
 }
 
 .title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Quicksand', 'Source Sans Pro', Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 50px;
@@ -112,7 +111,7 @@ export default Vue.extend({
   border: 1.5px solid grey;
   border-radius: 5px;
   background-color: white;
-  color: rgb(37, 36, 36);
+  color: black;
   outline: none;
 }
 

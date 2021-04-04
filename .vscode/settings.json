@@ -5,6 +5,7 @@
         "fastify",
         "frourio",
         "nuxtjs",
-        "stylelint"
+        "stylelint",
+        "vuex"
     ]
 }

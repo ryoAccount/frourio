@@ -4,7 +4,6 @@ import aspida from '@aspida/axios'
 import api from '~/server/api/$api'
 
 const tmp = api(aspida(axios))
-
 type ApiInstance = typeof tmp
 
 declare module 'vue/types/vue' {
